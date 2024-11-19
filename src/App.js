@@ -28,7 +28,7 @@ function App() {
 
   const makePayment = async () => {
     try {
-      const response = await fetch('http://localhost:3300/create-payment-link', {
+      const response = await fetch('https://backendrxpay.vercel.app/create-payment-link', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
