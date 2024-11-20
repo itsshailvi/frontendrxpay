@@ -6,7 +6,7 @@ function App() {
     currency: 'INR',
     accept_partial: true,
     first_min_partial_amount: 100,
-    expire_by: 1732060800,
+    expire_by: Math.floor((Date.now() + 24 * 60 * 60 * 1000) / 1000),
     reference_id: `${Date.now()}${Math.floor(Math.random() * 1000)}`,
     description: 'Payment for policy no #23456',
     customer: {
