@@ -1,8 +1,13 @@
 import './App.css';
+import {useState} from 'react';
 
 function App() {
+ const [money, setMoney] = useState('')
+ const editMoney = (e) => {
+  setMoney(e.target.value)
+ }
   const paymentBody = {
-    amount: 15000,
+    amount: money*100,
     currency: 'INR',
     accept_partial: true,
     first_min_partial_amount: 100,
@@ -22,7 +27,7 @@ function App() {
     notes: {
       policy_name: 'Jeevan Bima',
     },
-    callback_url: 'https://frontendrxpay.vercel.app/',
+    callback_url: 'https://magicpayment.vercel.app/',
     callback_method: 'get',
   };
 
@@ -47,7 +52,11 @@ function App() {
   return (
     <div className="App">
       <h1>Please make your payment</h1>
-      <button onClick={makePayment}>Make a Payment</button>
+      <input type='number' value={money} onChange={editMoney} style ={{margin: '10px'}} ></input>
+      <br/>
+      <button onClick={makePayment} style ={{margin: '10px'}} disabled={money<1}>Make a Payment</button>
+      <br/>
+      <p1>created  by shailvi </p1>
     </div>
   );
 }
