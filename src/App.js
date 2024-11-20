@@ -22,7 +22,7 @@ function App() {
     notes: {
       policy_name: 'Jeevan Bima',
     },
-    callback_url: 'http://localhost:3000',
+    callback_url: 'https://frontendrxpay.vercel.app/',
     callback_method: 'get',
   };
 
